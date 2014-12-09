@@ -1,4 +1,5 @@
 class Poi < ActiveRecord::Base
 	belongs_to :destination
-	has_and_belongs_to_many :category
+	has_many :category_pois
+	has_many :categories, through: :category_pois
 end

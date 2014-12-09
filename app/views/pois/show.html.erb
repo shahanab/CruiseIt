@@ -4,6 +4,17 @@
   <strong>Description:</strong>
   <%= @poi.description %>
 </p>
+<strong>Destination:</strong>
+<%= @poi.destination.name %>
+<br>
+<strong>Categories:</strong>
+<br>
+<% @poi.categories.each do |category| %>
+	<%= category.name %>
+	<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
+	<br>
+<% end %>
+<%= render 'categories', poi: @poi %>
 
 <%= link_to 'Edit', edit_poi_path(@poi) %> |
 <%= link_to 'Back', pois_path %>

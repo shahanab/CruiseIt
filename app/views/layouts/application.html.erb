@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<p>
+	<%= link_to 'Pois', pois_path %>
+	<%= link_to 'Destinations', destinations_path %>
+	<%= link_to 'Categories', categories_path %>
+</p>
 <%= yield %>
 
 </body>

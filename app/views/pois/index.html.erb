@@ -11,8 +11,8 @@
   <tbody>
     <% @pois.each do |poi| %>
       <tr>
-        <td><%= poi.description %></td>
-        <td><%= link_to 'Show', poi %></td>
+
+        <td><%= link_to poi.description, poi %></td>
         <td><%= link_to 'Edit', edit_poi_path(poi) %></td>
         <td><%= link_to 'Destroy', poi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

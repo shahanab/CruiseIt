@@ -11,13 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208191321) do
+ActiveRecord::Schema.define(version: 20141209021748) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "categories_pois", id: false, force: true do |t|
+    t.integer  "category_id"
+    t.integer  "poi_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "category_pois", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "poi_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "category_pois", ["category_id"], name: "index_category_pois_on_category_id"
+  add_index "category_pois", ["poi_id"], name: "index_category_pois_on_poi_id"
 
   create_table "destinations", force: true do |t|
     t.string   "name"
@@ -29,6 +46,9 @@ ActiveRecord::Schema.define(version: 20141208191321) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "destination_id"
   end
+
+  add_index "pois", ["destination_id"], name: "index_pois_on_destination_id"
 
 end

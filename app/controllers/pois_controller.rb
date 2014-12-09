@@ -10,6 +10,7 @@ class PoisController < ApplicationController
   # GET /pois/1
   # GET /pois/1.json
   def show
+    @category_poi = CategoryPoi.new
   end
 
   # GET /pois/new
@@ -25,7 +26,7 @@ class PoisController < ApplicationController
   # POST /pois.json
   def create
     @poi = Poi.new(poi_params)
-
+    
     respond_to do |format|
       if @poi.save
         format.html { redirect_to @poi, notice: 'Poi was successfully created.' }
@@ -69,6 +70,6 @@ class PoisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poi_params
-      params.require(:poi).permit(:description)
+      params.require(:poi).permit(:description, :destination_id)
     end
 end

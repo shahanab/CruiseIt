@@ -11,8 +11,7 @@
   <tbody>
     <% @destinations.each do |destination| %>
       <tr>
-        <td><%= destination.name %></td>
-        <td><%= link_to 'Show', destination %></td>
+        <td><%= link_to destination.name, destination %></td>
         <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
         <td><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -22,4 +21,59 @@
 
 <br>
 
-<%= link_to 'New Destination', new_destination_path %>
+<%= link_to 'Choose Your Destination', new_destination_path %>
+
+<!-- Navionics API -->
+
+   <script type="text/javascript" src="http://webviewer-api.navionics.com/static/js/proj4js/lib/proj4js-compressed.js"></script>
+   <script type="text/javascript" src="http://webviewer-api.navionics.com/static/js/OpenLayers/OpenLayers.js"></script>
+   <script type="text/javascript" src="http://webviewer-api.navionics.com/static/js/navionics/apimaps.js"></script>
+
+   <!--body onload="startmap()" -->
+   <body onload="init()" >
+       <h1> Navionics Map</h1>
+       <div id="mymap" class="NavionicsMap" style="width:60%; height:70%; border: 1px solid black"> </div>
+       <script>
+       // use body onload="startmap()" to starts all maps on load
+       key = '1234567890'
+       function init(){
+       var mapOptions = {
+       center: { lon: -64.5431, lat: 18.4456},
+       zoom: 12
+       }
+       var map = new NavionicsMap("mymap", key, mapOptions);
+       /*
+      * You can also set the center and the zoom level manually just calling these methods
+       map.setCenter(10, 43);
+       map.setZoom(4);
+       */
+
+       return map
+       }
+       </script>
+   </body>
+
+   <!-- Google Maps API -->
+
+<div class = "googlemaps">
+ <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyQ6oPEFLaaZ_cxjd3rJkZ3rJ5Y7N3uJo">
+    </script>
+    <script type="text/javascript">
+
+
+
+      function initialize() {
+        var mapOptions = {
+          center: { lat: 18.4456, lng: -64.5431},
+          zoom: 12
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+   </div> 

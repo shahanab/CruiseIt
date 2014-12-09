@@ -5,5 +5,10 @@
   <%= @destination.name %>
 </p>
 
+<% @destination.pois.each do |poi| %>
+	<%= link_to poi.description , poi_path(poi) %>
+	<br>
+<% end %>
+
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
 <%= link_to 'Back', destinations_path %>
