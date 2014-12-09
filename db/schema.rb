@@ -77,4 +77,9 @@ ActiveRecord::Schema.define(version: 20141209214715) do
 
   add_index "pois", ["destination_id"], name: "index_pois_on_destination_id"
 
+  create_table "tripadvisors", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end

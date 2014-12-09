@@ -6,7 +6,7 @@
 </p>
 
 <% @destination.pois.each do |poi| %>
-	<%= link_to poi.description , poi_path(poi) %><%= poi.categories.first.name %>
+	<%= link_to poi.description , poi_path(poi) %><%= poi.categories.first.name rescue nil %>
 	<br>
 <% end %>
 
