@@ -1,0 +1,33 @@
+<%= form_for(@poi_time) do |f| %>
+  <% if @poi_time.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poi_time.errors.count, "error") %> prohibited this poi_time from being saved:</h2>
+
+      <ul>
+      <% @poi_time.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_time %><br>
+    <%= f.time_select :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %><br>
+    <%= f.time_select :end_time %>
+  </div>
+  <div class="field">
+    <%= f.label :itinerary_id %><br>
+    <%= f.text_field :itinerary_id %>
+  </div>
+  <div class="field">
+    <%= f.label :poi_id %><br>
+    <%= f.text_field :poi_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

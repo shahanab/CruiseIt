@@ -8,10 +8,19 @@
 </head>
 <body>
 <p>
-	<%= link_to 'Pois', pois_path %>
+	<%= link_to 'Itineraries', itineraries_path %>
+	<%= link_to 'Points of Interest', pois_path %>
 	<%= link_to 'Destinations', destinations_path %>
 	<%= link_to 'Categories', categories_path %>
 </p>
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
 <%= yield %>
 
 </body>

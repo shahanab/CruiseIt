@@ -1,0 +1,31 @@
+<h1>Listing poi_times</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Itinerary</th>
+      <th>Poi</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poi_times.each do |poi_time| %>
+      <tr>
+        <td><%= poi_time.start_time %></td>
+        <td><%= poi_time.end_time %></td>
+        <td><%= poi_time.itinerary %></td>
+        <td><%= poi_time.poi %></td>
+        <td><%= link_to 'Show', poi_time %></td>
+        <td><%= link_to 'Edit', edit_poi_time_path(poi_time) %></td>
+        <td><%= link_to 'Destroy', poi_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poi time', new_poi_time_path %>

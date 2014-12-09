@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209021748) do
+ActiveRecord::Schema.define(version: 20141209214715) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "categories_pois", id: false, force: true do |t|
-    t.integer  "category_id"
-    t.integer  "poi_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,6 +34,39 @@ ActiveRecord::Schema.define(version: 20141209021748) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "itineraries", force: true do |t|
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "itineraries", ["user_id"], name: "index_itineraries_on_user_id"
+
+  create_table "itinerary_destinations", force: true do |t|
+    t.integer  "itinerary_id"
+    t.integer  "destination_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "itinerary_destinations", ["destination_id"], name: "index_itinerary_destinations_on_destination_id"
+  add_index "itinerary_destinations", ["itinerary_id"], name: "index_itinerary_destinations_on_itinerary_id"
+
+  create_table "poi_times", force: true do |t|
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "itinerary_id"
+    t.integer  "poi_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poi_times", ["itinerary_id"], name: "index_poi_times_on_itinerary_id"
+  add_index "poi_times", ["poi_id"], name: "index_poi_times_on_poi_id"
 
   create_table "pois", force: true do |t|
     t.string   "description"

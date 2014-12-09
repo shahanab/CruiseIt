@@ -1,0 +1,2 @@
+module PoiTimesHelper
+end

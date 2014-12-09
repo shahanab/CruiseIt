@@ -1,0 +1,24 @@
+<!-- <p id="notice"><%= notice %></p>
+ -->
+<p>
+  <strong>Start time:</strong>
+  <%= @poi_time.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @poi_time.end_time %>
+</p>
+
+<p>
+  <strong>Itinerary:</strong>
+  <%= @poi_time.itinerary %>
+</p>
+
+<p>
+  <strong>Poi:</strong>
+  <%= @poi_time.poi %>
+</p>
+
+<%= link_to 'Edit', edit_poi_time_path(@poi_time) %> |
+<%= link_to 'Back', poi_times_path %>
