@@ -4,28 +4,16 @@
   <strong>Name:</strong>
   <%= @destination.name %> <%= " (#{@category.name})" if @category %>
 </p>
-
-<% @destination.pois.each do |poi| %>
-	<%= link_to poi.description , poi_path(poi) %><%= poi.categories.first.name rescue nil %>
-	<br>
-
 <%= select_tag :category, options_for_select(Category.all.collect{|c| [c.name, c.id] }) %>
 <%= submit_tag("Go") %>
-<% if @category.nil? %>
+<br>
 
-  <% @destination.pois.each do |poi| %>
-    <%= link_to poi.description , poi_path(poi) %>
-    <br>
-  <% end %>
-
-<% else %>
-
-  <% @category.pois.in_destination(@destination).each do |poi| %>
-    <%= link_to poi.description , poi_path(poi) %>
-    <br>
-  <% end %> 
-
+<% @destination.pois.each do |poi| %>
+<%= link_to poi.description , poi_path(poi) %><%= poi.categories.first.name rescue nil %>
+<br>
 <% end %>
+
+
 
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
 <%= link_to 'Back', destinations_path %>
