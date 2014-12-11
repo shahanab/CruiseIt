@@ -10,7 +10,11 @@ class DestinationsController < ApplicationController
   # GET /destinations/1
   # GET /destinations/1.json
   def show
-    @category = !params[:category].nil? ? Category.find(params[:category].to_i) : nil
+    if params[:category].nil? || params[:category].to_i == 0
+          @category = @destination
+    else
+          @category = Category.find(params[:category].to_i) 
+    end
   end
 
   # GET /destinations/new

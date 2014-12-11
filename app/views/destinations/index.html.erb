@@ -23,39 +23,52 @@
 
 <%= link_to 'Choose A Destination', new_destination_path %>
 
-<!-- Navionics API -->
+    <script type="text/javascript" src="http://backbonejs.org/test/vendor/jquery.js"></script>
+    <script type="text/javascript" src="http://backbonejs.org/test/vendor/underscore.js"></script>
+    <script type="text/javascript" src="http://backbonejs.org/backbone.js"></script>
+    <script type="text/javascript" src="http://openlayers.org/en/v3.0.0/build/ol.js" ></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" >
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" >
 
-   <script type="text/javascript" src="http://webviewer-api.navionics.com/static/js/proj4js/lib/proj4js-compressed.js"></script>
-   <script type="text/javascript" src="http://webviewer-api.navionics.com/static/js/OpenLayers/OpenLayers.js"></script>
-   <script type="text/javascript" src="http://webviewer-api.navionics.com/static/js/navionics/apimaps.js"></script>
+    <script type="text/javascript" src="http://webapiv2.navionics.com/dist/webapi/webapi.min.js"></script>
+    <link rel="stylesheet" href="http://webapiv2.navionics.com/dist/webapi/webapi.min.css" >
 
-   <!--body onload="startmap()" -->
-   <body onload="init()" >
-       <h1> Navionics Map</h1>
-       <div id="mymap" class="NavionicsMap" style="width:60%; height:70%; border: 1px solid black"> </div>
-       <script>
-       // use body onload="startmap()" to starts all maps on load
-       key = '1234567890'
-       function init(){
-       var mapOptions = {
-       center: { lon: -64.5431, lat: 18.4456},
-       zoom: 12
-       }
-       var map = new NavionicsMap("mymap", key, mapOptions);
-       /*
-      * You can also set the center and the zoom level manually just calling these methods
-       map.setCenter(10, 43);
-       map.setZoom(4);
-       */
+<h1> Navionics Map</h1>
+<br>
+    <style type="text/css">
+        html, body, .test_map_div {
+            margin: 0;
+            width: 95%;
+            height: 75%;
+        }
+    </style>
 
-       return map
-       }
-       </script>
-   </body>
+<body data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
+   <div class="test_map_div" ></div>
+    <script>
+
+        var webapi = new JNC.Views.BoatingNavionicsMap({
+            tagId: '.test_map_div',
+            center: [  -64.5431, 18.4456 ],
+            zoom: 12,
+            navKey: 'Navionics_webapi_00500'
+        });
+
+        webapi.showSonarControl(false);
+
+    </script>
+
+
+</body>
+
+<!-- OLD Navionics API -->
+
+   
 
    <!-- Google Maps API -->
 
-<div class = "googlemaps">
+<!-- <div class = "googlemaps">
  <style type="text/css">
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
     </style>
@@ -76,4 +89,4 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-   </div> 
+   </div>  -->
