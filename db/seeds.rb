@@ -39,17 +39,38 @@ p23 = Poi.find_or_create_by(description: "Sopers Hole Marina", destination: d2)
 p24 = Poi.find_or_create_by(description: "The Moorings Marina", destination: d2)
 p25 = Poi.find_or_create_by(description: "Trellis Bay Moorings", destination: d2)
 p26 = Poi.find_or_create_by(description: "Village Cay Marina", destination: d2)
-p27 = Poi.find_or_create_by(description: "Virgin Garoda Yacht Harbour", destination: d1)
+p27 = Poi.find_or_create_by(description: "Virgin Gorda Yacht Harbour", destination: d1)
 p28 = Poi.find_or_create_by(description: "Wheatleys Harbour View Marina", destination: d2)
+
+# Fuel:
+
+p29 = Poi.find_or_create_by(description: "Bitter End Yacht Club", destination: d1)
+p30 = Poi.find_or_create_by(description: "Fort Burt Marina", destination: d2)
+p31 = Poi.find_or_create_by(description: "Leverick Bay Marina", destination: d1)
+p32 = Poi.find_or_create_by(description: "Lighthouse Marina", destination: d2)
+p33 = Poi.find_or_create_by(description: "Mega Surface Marina", destination: d2)
+p34 = Poi.find_or_create_by(description: "Nanny Cay Marina", destination: d2)
+p35 = Poi.find_or_create_by(description: "Penns Landing Marina", destination: d2)
+p36 = Poi.find_or_create_by(description: "Prospect Reef Resort and Marina", destination: d2)
+p37 = Poi.find_or_create_by(description: "Pussers Marina Cay", destination: d2)
+p38 = Poi.find_or_create_by(description: "Sopers Hole Marina", destination: d2)
+p39 = Poi.find_or_create_by(description: "The Moorings Marina", destination: d2)
+p40 = Poi.find_or_create_by(description: "Village Cay Marina", destination: d2)
+p41 = Poi.find_or_create_by(description: "Virgin Gorda Yacht Harbour", destination: d1)
+
+#Wifi
+
+p42 = Poi.find_or_create_by(description: "Bitter End Yacht Club", destination: d1)
 
 c1 = Category.find_or_create_by(name: "Activities")
 c2 = Category.find_or_create_by(name: "Fuel")
 c3 = Category.find_or_create_by(name: "Marinas/Moorings")
-# c4 = Category.find_or_create_by(name: "Moorings")
-c5 = Category.find_or_create_by(name: "Provisions")
-c6 = Category.find_or_create_by(name: "Restaurants")
+c4 = Category.find_or_create_by(name: "Provisions")
+c5 = Category.find_or_create_by(name: "Restaurants")
 
 
-# CategoryPoi.find_or_create_by(category: c3, poi: p1)
-# CategoryPoi.find_or_create_by(category: c3, poi: p2)
-# CategoryPoi.find_or_create_by(category: c4, poi: p1)
+
+CategoryPoi.find_or_create_by(category: c3, poi: p1)
+CategoryPoi.find_or_create_by(category: c3, poi: p2)
+CategoryPoi.find_or_create_by(category: c4, poi: p1)
+CategoryPoi.find_or_create_by(category: c6, poi: p41)

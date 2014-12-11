@@ -1,10 +1,11 @@
 <!-- <p id="notice"><%= notice %></p> -->
-
+<br>
+<br>
+<br>
 <p>
   <strong>Name:</strong>
   <%= @destination.name %> <%= " (#{@category.name})" if @category %>
 </p>
-
 
 <%# select_tag :category, options_for_select(Category.all.collect{|c| [c.name, c.id] }) %>
 <%# submit_tag("Go") %>

@@ -11,10 +11,14 @@
 <br>
 <% @poi.categories.each do |category| %>
 	<%= category.name %>
-	<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% if current_user.admin? %>
+		<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
 	<br>
 <% end %>
-<%= render 'categories', poi: @poi %>
 
-<%= link_to 'Edit', edit_poi_path(@poi) %> |
+<% if current_user.admin? %>
+	<%= render 'categories', poi: @poi %>
+	<%= link_to 'Edit', edit_poi_path(@poi) %> |
+<% end %>
 <%= link_to 'Back', pois_path %>

@@ -4,7 +4,8 @@ class ItinerariesController < ApplicationController
   # GET /itineraries
   # GET /itineraries.json
   def index
-    @itineraries = Itinerary.all
+    @itineraries = current_user.itineraries
+
   end
 
   # GET /itineraries/1
@@ -25,6 +26,7 @@ class ItinerariesController < ApplicationController
   # POST /itineraries.json
   def create
     @itinerary = Itinerary.new(itinerary_params)
+    @itinerary.user = current_user
 
     respond_to do |format|
       if @itinerary.save

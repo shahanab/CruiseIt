@@ -1,6 +1,6 @@
 <h1>Your Destinations</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -30,9 +30,10 @@
     <script type="text/javascript" src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" >
     <link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" >
-
     <script type="text/javascript" src="http://webapiv2.navionics.com/dist/webapi/webapi.min.js"></script>
     <link rel="stylesheet" href="http://webapiv2.navionics.com/dist/webapi/webapi.min.css" >
+
+<!--   Navionics -->
 
 <h1> Navionics Map</h1>
 <br>
@@ -47,7 +48,7 @@
 <body data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
    <div class="test_map_div" ></div>
     <script>
-
+    
         var webapi = new JNC.Views.BoatingNavionicsMap({
             tagId: '.test_map_div',
             center: [  -64.5431, 18.4456 ],
@@ -58,35 +59,4 @@
         webapi.showSonarControl(false);
 
     </script>
-
-
 </body>
-
-<!-- OLD Navionics API -->
-
-   
-
-   <!-- Google Maps API -->
-
-<!-- <div class = "googlemaps">
- <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyQ6oPEFLaaZ_cxjd3rJkZ3rJ5Y7N3uJo">
-    </script>
-    <script type="text/javascript">
-
-
-
-      function initialize() {
-        var mapOptions = {
-          center: { lat: 18.4456, lng: -64.5431},
-          zoom: 12
-        };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-   </div>  -->

@@ -1,4 +1,5 @@
 class CategoryPoisController < ApplicationController
+
 	def create
 	 @category_poi = CategoryPoi.new(category_poi_params)
 
