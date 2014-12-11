@@ -45,11 +45,11 @@ p28 = Poi.find_or_create_by(description: "Wheatleys Harbour View Marina", destin
 c1 = Category.find_or_create_by(name: "Activities")
 c2 = Category.find_or_create_by(name: "Fuel")
 c3 = Category.find_or_create_by(name: "Marinas/Moorings")
-c4 = Category.find_or_create_by(name: "Moorings")
+# c4 = Category.find_or_create_by(name: "Moorings")
 c5 = Category.find_or_create_by(name: "Provisions")
 c6 = Category.find_or_create_by(name: "Restaurants")
 
 
-CategoryPoi.find_or_create_by(category: c3, poi: p1)
-CategoryPoi.find_or_create_by(category: c3, poi: p2)
-CategoryPoi.find_or_create_by(category: c4, poi: p1)
+# CategoryPoi.find_or_create_by(category: c3, poi: p1)
+# CategoryPoi.find_or_create_by(category: c3, poi: p2)
+# CategoryPoi.find_or_create_by(category: c4, poi: p1)
