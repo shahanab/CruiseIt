@@ -14,3 +14,16 @@
  *= require_self
  */
 
+a:visited { 
+	/*color: #585858;*/
+	color: white;
+	background-color: #0099CC;
+}
+
+a{
+	color:white;
+}
+
+a:hover{
+	background-color: #0099CC;
+}

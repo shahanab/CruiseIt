@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a:visted{
-	background: none;
+.categories{
+	color: white;
 }
+
+.categories-show{
+	color: white;
+}
+
+.categories-edit{
+	color:white;
+}
+
+.categories-new{
+	color:white;
+}
+
+h1{
+	text-align: center;
+}
+
+.category-name{
+	color: black;
+}
+

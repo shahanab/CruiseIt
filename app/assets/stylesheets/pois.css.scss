@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .poi{
 	color: white;
 }
@@ -11,8 +10,11 @@
 	color:white;
 }
 
-
 .poi-show{
+	color: white;
+}
+
+.poi-new{
 	color: white;
 }
 
@@ -20,10 +22,10 @@ h1{
 	text-align: center;
 }
 
-.render-form{
+.poi-name{
 	color: black;
 }
 
-.field-name{
-	color: white;
+.remove-category{
+	color:black;
 }
