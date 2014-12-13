@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" >
     <link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" >
     <script type="text/javascript" src="http://webapiv2.navionics.com/dist/webapi/webapi.min.js"></script>
-    <link rel="stylesheet" href="http://webapiv2.navionics.com/dist/webapi/webapi.min.css" >
+    <!-- <link rel="stylesheet" href="http://webapiv2.navionics.com/dist/webapi/webapi.min.css" > -->
 
 <div class="poi-show">
 <p>
@@ -41,14 +41,14 @@
 <h1> Navionics Map</h1>
 <br>
     <style type="text/css">
-        html, body, .test_map_div {
+         .test_map_div {
             margin-bottom: 0;
             width: 100%;
             height: 75%;
         }
     </style>
 
-<body data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
+<div class="navionics" data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
    <div class="test_map_div" ></div>
     <script>
     
@@ -62,6 +62,6 @@
         webapi.showSonarControl(false);
 
     </script>
-</body>
+</div>
 </div>
 

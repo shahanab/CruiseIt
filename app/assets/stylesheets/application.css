@@ -14,16 +14,30 @@
  *= require_self
  */
 
+
+
 a:visited { 
-	/*color: #585858;*/
 	color: white;
 	background-color: #0099CC;
 }
 
-a{
-	color:white;
+a {
+	color: white;
 }
 
 a:hover{
+	color: white;
 	background-color: #0099CC;
+}
+
+input{
+	color:black;
+}
+
+ul{
+	list-style-type: none;
+}
+
+a.navbar-link:hover{
+	background-color: none !important;
 }
