@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  root 'pages#index'
+  get 'index', to: 'pages#index', as: 'index'
   
+  get 'pages/index'
+
   devise_for :users
   resources :poi_times
 
@@ -15,7 +19,7 @@ Rails.application.routes.draw do
   
   resources :category_pois, only: [:create, :destroy]
 
-  root 'destinations#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

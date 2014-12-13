@@ -1,3 +1,4 @@
+<div class= "itineraries-form">
 <%= form_for(@itinerary) do |f| %>
   <% if @itinerary.errors.any? %>
     <div id="error_explanation">
@@ -11,9 +12,12 @@
     </div>
   <% end %>
 
+<div class= "field-name">
   <div class="field">
-    <%= f.label :name %><br>
+    <strong> Itinerary </strong><%= f.label :name %><br>
+    <div class= "itinerary-name">
     <%= f.text_field :name %>
+    </div>
   </div>
   <div class="field">
     <%= f.label :start_date %><br>
@@ -23,12 +27,11 @@
     <%= f.label :end_date %><br>
     <%= f.date_select :end_date %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
+ 
   <div class="actions">
 
     <%= f.submit %>
   </div>
+  </div>
 <% end %>
+</div>

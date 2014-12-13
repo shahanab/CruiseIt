@@ -1,3 +1,40 @@
 // Place all the styles related to the Itineraries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.itineraries{
+	text-align: center;
+	color: white;
+}
+
+.itineraries-show{
+	color: white;
+}
+
+.itineraries-edit{
+	color: white;
+}
+
+.itineraries-form{
+	color:white;
+}
+
+.itineraries-new{
+	color:white;
+}
+
+h1{
+	text-align: center;
+}
+
+.itinerary-name{
+	color: black;
+}
+
+.actions{
+	color:black;
+}
+
+#edit_itinerary_3 > div.field-name > div.actions{
+	color: black;
+}

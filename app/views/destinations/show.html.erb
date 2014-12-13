@@ -1,10 +1,10 @@
+<div class= "destination-show">
 <!-- <p id="notice"><%= notice %></p> -->
 <br>
 <br>
 <br>
 <p>
-  <strong>Name:</strong>
-  <%= @destination.name %> <%= " (#{@category.name})" if @category %>
+  <h1><%= @destination.name %></h1>
 </p>
 
 <%# select_tag :category, options_for_select(Category.all.collect{|c| [c.name, c.id] }) %>
@@ -24,3 +24,4 @@
 
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
 <%= link_to 'Back', destinations_path %>
+</div>
