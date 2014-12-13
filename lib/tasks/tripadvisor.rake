@@ -5,3 +5,5 @@ namespace :tripadvisor do
     Tripadvisor.populate
   end
 end
+# heroku schedularlashd
+# heroku run rake tripadvisor:scrape

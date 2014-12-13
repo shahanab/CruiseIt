@@ -10,7 +10,12 @@ class Tripadvisor
     restaurants = JSON.parse(response.body)["data"]
 
     restaurants.each do |restaurant|
-      Poi.find_or_create_by(description: restaurant["name"])
+      p = Poi.find_or_create_by(description: restaurant["name"])
+      p.rating = restaurant["rating"] 
+      p.address = "#{restaurant['address_obj']['street1']} #{restaurant['address_obj']['street2']}
+#{restaurant["address_obj"]["city"]}, #{restaurant["address_obj"]["state"]}
+#{restaurant["address_obj"]["country"]} #{restaurant["address_obj"]["postalcode"]}"
+      p.save
     end
   end
     def self.get_activities
