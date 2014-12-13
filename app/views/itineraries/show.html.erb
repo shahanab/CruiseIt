@@ -22,18 +22,14 @@
 </p>
 
 <strong>Destinations:</strong>
-<br>
-<% @itinerary.destinations.each do |destination|  %>
-	<%= destination.name%>
-	<br>
+
 	User POIs:
 	<ul>
-		<% destination.pois.each do |poi| %>
+		<% @itinerary.pois.each do |poi| %>
 			<li><%= poi.description %></li>
 		<% end %>
 	</ul>
-	<br>
-<% end %>
+	
 <%= link_to 'Edit', edit_itinerary_path(@itinerary) %> |
 <%= link_to 'Back', itineraries_path %>
 </div>

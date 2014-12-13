@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213212749) do
+ActiveRecord::Schema.define(version: 20141213231645) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20141213212749) do
 
   add_index "itinerary_destinations", ["destination_id"], name: "index_itinerary_destinations_on_destination_id"
   add_index "itinerary_destinations", ["itinerary_id"], name: "index_itinerary_destinations_on_itinerary_id"
+
+  create_table "itinerary_items", force: true do |t|
+    t.integer  "itinerary_id"
+    t.integer  "poi_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "itinerary_items", ["itinerary_id"], name: "index_itinerary_items_on_itinerary_id"
+  add_index "itinerary_items", ["poi_id"], name: "index_itinerary_items_on_poi_id"
 
   create_table "poi_times", force: true do |t|
     t.time     "start_time"
