@@ -30,6 +30,7 @@ class ItinerariesController < ApplicationController
 
     respond_to do |format|
       if @itinerary.save
+        @itinerary.itinerary_destinations.create(itinerary_destination_params[:itinerary_destination])
         format.html { redirect_to @itinerary, notice: 'Itinerary was successfully created.' }
         format.json { render :show, status: :created, location: @itinerary }
       else
@@ -72,5 +73,8 @@ class ItinerariesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def itinerary_params
       params.require(:itinerary).permit(:name, :start_date, :end_date, :user_id)
+    end
+    def itinerary_destination_params
+      params.require(:itinerary).permit(itinerary_destination: [:destination_id])
     end
 end
