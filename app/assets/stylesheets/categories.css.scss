@@ -2,20 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+	background: #99CCFF;
+}
+
 .categories{
-	color: white;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: gray;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
 }
 
 .categories-show{
-	color: white;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: gray;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
 }
 
 .categories-edit{
-	color:white;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: gray;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
 }
 
 .categories-new{
-	color:white;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: gray;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
 }
 
 h1{

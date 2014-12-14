@@ -2,23 +2,56 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body{
+	background: #99CCFF;
+}
+
 .destinations{
-	color: white;
+	// margin-right: 400px;
+	// margin-left: 400px;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: gray;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
 }
 
 .destination-show{
-	color: white;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: gray;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
 }
 
 .destination-edit{
-	color:white;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: gray;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
 }
 
 .destination-new{
-	color:white;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: gray;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
 }
 
 h1{
 	text-align: center;
 }
+
+.vg-image{
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+// .destinations-content{
+// 	padding-left: 140px;
+// }
+
+
 

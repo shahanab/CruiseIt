@@ -14,19 +14,25 @@
  *= require_self
  */
 
+body{
+	background: #4DB8DB;
+}
 
+.navbar{
+	margin:0;
+}
 
 a:visited { 
-	color: white;
+	color: gray;
 	background-color: #0099CC;
 }
 
 a {
-	color: white;
+	color: gray;
 }
 
 a:hover{
-	color: white;
+	color: gray;
 	background-color: #0099CC;
 }
 
