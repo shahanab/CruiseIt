@@ -22,7 +22,10 @@
 </p>
 
 <strong>Destinations:</strong>
-
+<% @itinerary.destinations.each do |destination|%>
+    <%= destination.name %>
+    <% end %>
+<br>
 	User POIs:
 	<ul>
 		<% @itinerary.pois.each do |poi| %>
