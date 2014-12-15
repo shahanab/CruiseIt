@@ -1,6 +1,6 @@
 <%= form_for(@category_poi, url: category_pois_path, html: { method: :post}) do |f|  %>
 	<%= f.collection_select :category_id, Category.all, :id, :name %>
 	<%= f.hidden_field :poi_id, value: poi.id %>
-	<%= f.submit 'Add Category' %>
+	<%= f.submit 'Add Category', class: "btn btn-default" %>
 <br>
 <% end %>

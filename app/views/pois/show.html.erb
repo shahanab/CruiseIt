@@ -13,26 +13,27 @@
 <p>
   <div class="poi-name"><%= @poi.description %></div>
 </p>
-<strong>Destination:</strong>
-<%= @poi.destination.name %>
-<br>
-<strong>Categories:</strong>
-<br>
-    <% @poi.categories.each do |category| %>
-    	<%= category.name %>
-    	<% if current_user.admin? %>
-    	<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
-    	<% end %>
-    	<br>
-    <% end %>
+<div class= "poi-content">
+    <strong>Destination:</strong>
+    <%= @poi.destination.name %>
+    <br>
+    <strong>Categories:</strong>
+    <br>
+        <% @poi.categories.each do |category| %>
+        	<%= category.name %>
+        	<% if current_user.admin? %>
+        	<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
+        	<% end %>
+        	<br>
+        <% end %>
 
     <% if current_user.admin? %>
     	<%= render 'categories', poi: @poi %>
-    	<%= link_to 'Edit', edit_poi_path(@poi) %> |
-    <% end %>
-    <%= link_to 'Back', pois_path %>
+    	<%= link_to 'Edit', edit_poi_path(@poi), class: "btn btn-default" %> |
+            <% end %>
+            <%= link_to 'Back', pois_path, class: "btn btn-default"  %>        
 
-
+</div>
 
 <!--   Navionics -->
 
@@ -50,13 +51,25 @@
             zoom: 8,
             navKey: 'Navionics_webapi_00500'
         });
+    
+    <script>
+        $(document).on("ready page:load", function( ) {
 
-        webapi.showSonarControl(false);
+            var webapi = new JNC.Views.BoatingNavionicsMap({
+                tagId: '.test_map_div',
+                center: [  -64.5431, 18.4456 ],
+                zoom: 8,
+                navKey: 'Navionics_webapi_00500'
+            });
+
+            webapi.showSonarControl(false);
+        })
 
     })
        
 
     </script>
-</div>
+
+    </div>
 </div>
 

@@ -24,16 +24,20 @@ body{
 
 a:visited { 
 	color: gray;
-	background-color: #0099CC;
+	/*background-color: #0099CC;*/
 }
 
 a {
 	color: gray;
+	font-family: 'Maven Pro', sans-serif;
 }
 
 a:hover{
-	color: gray;
-	background-color: #0099CC;
+	color: #5EBFDF;
+	/*background-color: #5EBFDF;*/
+	background-color: none;
+	border-radius: 2px;
+	text-decoration: none;
 }
 
 input{

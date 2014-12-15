@@ -7,13 +7,14 @@ body{
 }
 
 .destinations{
-	// margin-right: 400px;
-	// margin-left: 400px;
 	margin-right: 150px;
 	margin-left: 150px;
 	color: gray;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
+	font-family: 'Maven Pro', sans-serif;
+	padding-left: 60px;
+	padding-right: 60px;
 }
 
 .destination-show{
@@ -22,6 +23,9 @@ body{
 	color: gray;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
+	font-family: 'Maven Pro', sans-serif;
+	padding-left: 60px;
+	padding-right: 60px;
 }
 
 .destination-edit{
@@ -30,6 +34,9 @@ body{
 	color: gray;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
+	font-family: 'Maven Pro', sans-serif;
+	padding-left: 60px;
+	padding-right: 60px;
 }
 
 .destination-new{
@@ -38,20 +45,66 @@ body{
 	color: gray;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
+	font-family: 'Maven Pro', sans-serif;
+	padding-left: 60px;
+	padding-right: 60px;
 }
 
 h1{
 	text-align: center;
 }
 
-.vg-image{
-	padding-left: 20px;
-	padding-bottom: 20px;
+dialog{
+	width: 50%;
+	border-radius: 5px;
+	border-color: gray;
+	color: gray;
 }
 
-// .destinations-content{
-// 	padding-left: 140px;
-// }
+.content{
+	display: inline-block;
+}
 
+.pictures{
+	height: 197px;
+	width: 294px;
+	border-radius: 3px;
+	margin-left: auto;
+}
 
+.btn-default{
+	margin-top: 5px;
+	margin-left: auto;
+}
 
+.virgingorda{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.tortola{
+	text-align:center;
+	margin-bottom: 40px;
+	margin-left: 100px;
+}
+
+.jost-van-dyke{
+	text-align:center;
+}
+
+.anegada{
+	text-align: center;
+	margin-left: 100px;
+}
+
+.destinations-content{
+	text-align: center;
+}
+
+.islands{
+	font-size: 20px;
+}
+
+p{
+	text-align: justify;
+}
