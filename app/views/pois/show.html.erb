@@ -51,8 +51,9 @@
 <div class="navionics" data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
    <div class="test_map_div" ></div>
     <script>
-    
-        var webapi = new JNC.Views.BoatingNavionicsMap({
+    $(document).on("ready page:load", function(){
+
+         var webapi = new JNC.Views.BoatingNavionicsMap({
             tagId: '.test_map_div',
             center: [  -64.5431, 18.4456 ],
             zoom: 12,
@@ -60,6 +61,9 @@
         });
 
         webapi.showSonarControl(false);
+
+    })
+       
 
     </script>
 </div>
