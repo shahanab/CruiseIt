@@ -4,7 +4,9 @@
 <div class= "render-form">
 <%= render 'form' %>
 </div>
-
-<%= link_to 'Show', @itinerary %> |
+<div class="row">
+<%= link_to 'Show', @itinerary, class: "btn btn-default" %>
+<%= link_to 'Delete', @itinerary, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"%> 
 <%= link_to 'Back', itineraries_path, class: "btn btn-default" %>
+</div>
 </div>
