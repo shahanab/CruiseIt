@@ -2,7 +2,9 @@ namespace :tripadvisor do
 
   desc "TODO"
   task scrape: :environment do
-    Tripadvisor.populate
+    Destination.all.each do |destination|
+      Tripadvisor.populate(destination) unless destination.tripadvisor_id.nil?
+    end
   end
 end
 # heroku schedularlashd

@@ -8,8 +8,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Destinations:
-d1 = Destination.find_or_create_by(name: "Virgin Gorda")
-d2 = Destination.find_or_create_by(name: "Tortola")
+d1 = Destination.find_or_create_by(name: "Virgin Gorda", tripadvisor_id: 147358)
+d2 = Destination.find_or_create_by(name: "Tortola", tripadvisor_id: 147354)
 d3 = Destination.find_or_create_by(name: "Jost Van Dyke")
 d4 = Destination.find_or_create_by(name: "Anegada")
 
