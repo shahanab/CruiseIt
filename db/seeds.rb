@@ -10,6 +10,8 @@
 # Destinations:
 d1 = Destination.find_or_create_by(name: "Virgin Gorda")
 d2 = Destination.find_or_create_by(name: "Tortola")
+d3 = Destination.find_or_create_by(name: "Jost Van Dyke")
+d4 = Destination.find_or_create_by(name: "Anegada")
 
 #Points of Interest:
 	#Marinas/Moorings, Wifi, Fuel:
