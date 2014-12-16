@@ -12,7 +12,7 @@
 <p> 
 <strong>Destination:</strong>
 <% @itinerary.destinations.each do |destination|%>
-    <%= destination.name %>
+    <%= @poi.destination.name %>
     <% end %>
 </p>
 </div>
@@ -44,7 +44,7 @@
 	Points of Interest:
 	<ul>
 		<% @itinerary.pois.each do |poi| %>
-			<li><%= poi.description %></li>
+			<li><%= link_to poi.description, poi %></li>
 		<% end %>
 	</ul>
 	</div>
