@@ -6,7 +6,7 @@ def create
 
     respond_to do |format|
       if @itinerary_item.save
-        format.html { redirect_to @itinerary_item.poi, notice: 'itinerary_item was successfully created.' }
+        format.html { redirect_to @itinerary_item.itinerary, notice: 'itinerary_item was successfully created.' }
         format.json { render :show, status: :created, location: @itinerary_item }
       else
         format.html { render :new }

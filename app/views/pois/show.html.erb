@@ -18,7 +18,7 @@
 
 <div class= "something">
   <div class="text-right">
-      <%= form_for(@itinerary_item = ItineraryItem.new, remote: true) do |f| %>
+      <%= form_for(@itinerary_item = ItineraryItem.new) do |f| %>
         <% if @itinerary_item.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@itinerary_item.errors.count, "error") %> prohibited this poi from being saved:</h2>
@@ -43,7 +43,7 @@
            <%= render 'categories', poi: @poi %>
            <%= link_to 'Edit', edit_poi_path(@poi), class: "btn btn-default" %> |
         <% end %>
-            <%= link_to 'Back', pois_path, class: "btn btn-default"  %>
+            <%= link_to 'Back', :back, class: "btn btn-default"  %>
   </div>
           <% end %>
 </div>
