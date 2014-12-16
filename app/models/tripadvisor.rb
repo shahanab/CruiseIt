@@ -24,6 +24,7 @@ class Tripadvisor
       cat.category_id = Category.find_by(name: "Restaurants").id
       cat.save
 
+
     end
 
   end
@@ -31,7 +32,6 @@ class Tripadvisor
       @@apikey = '6928d6617f794b0894f6cea24606ce1c'
       response = HTTParty.get("http://api.tripadvisor.com/api/partner/2.0/location/#{destination.tripadvisor_id.to_s}/attractions?key=#{@@apikey}")
       activities = JSON.parse(response.body)["data"]
-
       activities.each do |activity|
       p = Poi.find_or_create_by(description: activity["name"])
       p.rating = activity["rating"] 
