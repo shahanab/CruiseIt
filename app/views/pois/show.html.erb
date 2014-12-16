@@ -16,47 +16,56 @@
 
 <div class= "poi-content">
 
-<%= form_for(@itinerary_item = ItineraryItem.new, remote: true) do |f| %>
-  <% if @itinerary_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@itinerary_item.errors.count, "error") %> prohibited this poi from being saved:</h2>
-      <ul>
-      <% @itinerary_item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.hidden_field :poi_id, :value => @poi.id %>
-    </div>
+<div class= "row">
+  <div class="text-right">
+      <%= form_for(@itinerary_item = ItineraryItem.new, remote: true) do |f| %>
+        <% if @itinerary_item.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@itinerary_item.errors.count, "error") %> prohibited this poi from being saved:</h2>
+            <ul>
+            <% @itinerary_item.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div> 
   </div>
-    <%= f.collection_select :itinerary_id,  current_user.itineraries, :id, :name %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+        <% end %>
 
+  <div class="poi-buttons">
+        <div class="field">
+          <%= f.hidden_field :poi_id, :value => @poi.id %>
+        </div>
+          <%= f.collection_select :itinerary_id,  current_user.itineraries, :id, :name %>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+        <% if current_user.admin? %>
+           <%= render 'categories', poi: @poi %>
+           <%= link_to 'Edit', edit_poi_path(@poi), class: "btn btn-default" %> |
+        <% end %>
+            <%= link_to 'Back', pois_path, class: "btn btn-default"  %>
+  </div>
+          <% end %>
+</div>
+
+<div class = "actual-info">
     <strong>Destination:</strong>
+    <br>
     <%= @poi.destination.name %>
+    <br>
     <br>
     <strong>Categories:</strong>
     <br>
         <% @poi.categories.each do |category| %>
         	<%= category.name %>
-        	<% if current_user.admin? %>
-        	<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
-        	<% end %>
-        	<br>
-        <% end %>
+            	<% if current_user.admin? %>
+                  	<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
+            	<% end %>
+        	   <br>
+        <% end %> 
+  </div> 
 
-    <% if current_user.admin? %>
-    	<%= render 'categories', poi: @poi %>
-    	<%= link_to 'Edit', edit_poi_path(@poi), class: "btn btn-default" %> |
-            <% end %>
-            <%= link_to 'Back', pois_path, class: "btn btn-default"  %>        
-
+</div>
 
 <!--   Navionics -->
 
@@ -66,7 +75,7 @@
 <div class="navionics" data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
    <div class="test_map_div" ></div>
     <script>
-        $(document).on("ready page:load", function( ) {
+        // $(document).on("ready page:load", function( ) {
 
             var webapi = new JNC.Views.BoatingNavionicsMap({
                 tagId: '.test_map_div',
@@ -76,7 +85,7 @@
             });
 
             webapi.showSonarControl(false);
-        })
+        // })
     </script>
     </div>
   </div>

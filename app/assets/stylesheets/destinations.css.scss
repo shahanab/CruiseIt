@@ -138,3 +138,23 @@ ul{
 .destination-edit-back{
 	text-align: center;
 }
+
+body > div.destination-show > div.destination-edit-back > a:nth-child(1){
+	margin-right: 10px;
+}
+
+#vgmodal{
+	z-index:1;
+}
+
+#tmodal{
+	z-index:1;
+}
+
+#jvdmodal{
+	z-index:1;
+}
+
+#amodal{
+	z-index:1;
+}

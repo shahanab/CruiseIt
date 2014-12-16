@@ -84,8 +84,19 @@ h3{
 }
 
 .poi-content{
-	text-align: left;
+	// padding-left: 150px;
 }
+
+.poi-info{
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    	-moz-column-count: 2; /* Firefox */
+    	column-count: 2;	
+}
+
+.poi-buttons{
+	float: right;
+}
+
 
 
 
