@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213231645) do
+ActiveRecord::Schema.define(version: 20141216193318) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20141213231645) do
     t.datetime "updated_at"
     t.integer  "destination_id"
     t.text     "address"
-    t.decimal  "rating",         precision: 2, scale: 2
+    t.decimal  "rating",         precision: 3, scale: 2
   end
 
   add_index "pois", ["destination_id"], name: "index_pois_on_destination_id"
