@@ -4,12 +4,16 @@
 
 body{
 	background: #99CCFF;
+	background: url(https://s3.amazonaws.com/uploads.hipchat.com/108061/1279243/WS2L8NaUPEJuElb/cartographer.png);
+
 }
 
 .destinations{
+	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
 	color: gray;
+
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
@@ -17,6 +21,9 @@ body{
 	padding-right: 60px;
 }
 
+.destination h1{
+	font-family: 'Lato', sans-serif;
+}
 .destination-show{
 	margin-right: 150px;
 	margin-left: 150px;
@@ -52,6 +59,8 @@ body{
 
 h1{
 	text-align: center;
+	text-transform: uppercase;
+	text-weight:bold;
 }
 
 dialog{
@@ -69,7 +78,8 @@ dialog{
 	height: 197px;
 	width: 294px;
 	border-radius: 3px;
-	margin-left: auto;
+	
+	text-align:center;
 }
 
 .btn-default{
@@ -103,6 +113,7 @@ dialog{
 
 .islands{
 	font-size: 20px;
+	text-align:center;
 }
 
 p{
