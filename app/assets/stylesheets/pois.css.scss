@@ -7,83 +7,105 @@ body{
 }
 
 .poi{
+	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
-	color: gray;
+	color: #505050;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
 	padding-left: 60px;
 	padding-right: 60px;
+	padding-bottom: 20px;
 }
 
-    // .test_map_div {
-    //         margin-bottom: 0;
-    //         margin-right: 150px;
-    //         margin-left: 150px;
-    //         width: 100%;
-    //         height: 75%;
-    //     }
-
  .navionics {
-            margin-bottom: 0;
-            width: 100%;
-            height: 75%;
-            border: solid;
-            border-radius: 3px;
-            border-color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0;
+      width: 100%;
+      height: 75%;
+      border: solid;
+      border-radius: 3px;
+      border-color: rgba(255, 255, 255, 0.6);
         }        
 
 .poi-edit{
+	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
-	color: gray;
+	color: #505050;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
 	padding-left: 60px;
 	padding-right: 60px;
+	padding-bottom: 20px;
 }
 
 .poi-show{
+	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
-	color: gray;
+	color: #505050;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
 	padding-left: 60px;
 	padding-right: 60px;
+	padding-bottom: 20px;
 }
 
 .poi-new{
+	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
-	color: gray;
+	color: #505050;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
 	padding-left: 60px;
 	padding-right: 60px;
+	padding-bottom: 20px;
 }
 
 .poi-name{
-	// font-family: helvetica;
-	font-weight: 500;
-	// line-height: 1.1;
-	font-size: 2em;
+	font-family: 'Lato', sans-serif;
 	text-align: center;
-	color: gray;
+	text-transform: uppercase;
+	text-weight:bold;
+	font-size: 2em;
+	color: #505050;
 }
 
 h3{
+	margin-top: 100px;
+	font-family: 'Lato', sans-serif;
 	text-align: center;
-	color: gray;
+	text-transform: uppercase;
+	color: #505050;
 }
 
 .poi-content{
-	text-align: left;
+	// padding-left: 150px;
 }
+
+.poi-info{
+	margin-left: 250px;
+}
+
+.poi-buttons{
+	float: right;
+	text-align: center;
+	margin-right: 250px;
+}
+
+.category-info{
+	float: right;
+}
+
+// .destination-info{
+// 	float: right;
+// }
+
 
 
 

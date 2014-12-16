@@ -129,17 +129,17 @@
 
 
 
- <br>
+<!--  <br>
  <% @destinations.each do |destination| %>
-        <%= link_to destination.name, destination %>
-        <%= link_to 'Edit', edit_destination_path(destination) %>
-        <%= link_to 'Delete', destination, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% link_to destination.name, destination %>
+        <% link_to 'Edit', edit_destination_path(destination) %>
+        <% link_to 'Delete', destination, method: :delete, data: { confirm: 'Are you sure?' } %>
     <br>    
   <% end %>
 
 <br>
-<%= link_to 'New Destination', new_destination_path %>
-</div>
+<% link_to 'New Destination', new_destination_path %>
+</div> -->
 
 
 

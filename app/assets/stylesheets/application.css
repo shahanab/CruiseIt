@@ -24,17 +24,17 @@ body{
 }
 
 a:visited { 
-	color: gray;
+	color: #505050;
 	/*background-color: #0099CC;*/
 }
 
 a {
-	color: gray;
+	color: #505050;
 	font-family: 'Maven Pro', sans-serif;
 }
 
 a:hover{
-	color: #5EBFDF;
+	color: #008AB8;
 	/*background-color: #5EBFDF;*/
 	background-color: none;
 	border-radius: 2px;
