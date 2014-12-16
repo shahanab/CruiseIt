@@ -14,19 +14,18 @@
   <div class="poi-name"><%= @poi.description %></div>
 </p>
 
+<div class= "poi-content">
 
 <%= form_for(@itinerary_item = ItineraryItem.new, remote: true) do |f| %>
   <% if @itinerary_item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@itinerary_item.errors.count, "error") %> prohibited this poi from being saved:</h2>
-
       <ul>
       <% @itinerary_item.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
-
   <% end %>
 
   <div class="field">
@@ -39,7 +38,6 @@
   </div>
 <% end %>
 
-<div class= "poi-content">
     <strong>Destination:</strong>
     <%= @poi.destination.name %>
     <br>
@@ -59,7 +57,6 @@
             <% end %>
             <%= link_to 'Back', pois_path, class: "btn btn-default"  %>        
 
-</div>
 
 <!--   Navionics -->
 
@@ -80,10 +77,8 @@
 
             webapi.showSonarControl(false);
         })
-       
-
     </script>
-
     </div>
+  </div>
 </div>
 

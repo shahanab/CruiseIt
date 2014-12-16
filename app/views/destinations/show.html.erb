@@ -18,13 +18,15 @@
 
 <br>
 
+<div class = "destination-poi">
 <% @category.each do |poi| %>
 	<%= link_to poi.description , poi_path(poi) %>
 <br>
-<% end %>
+<% end %></div>
 
 <br>
 
+<div class = "destination-edit-back">
 <%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-default" %> |
-<%= link_to 'Back', destinations_path, class: "btn btn-default" %>
+<%= link_to 'Back', destinations_path, class: "btn btn-default" %></div>
 </div>

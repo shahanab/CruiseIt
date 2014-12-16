@@ -12,33 +12,35 @@ body{
 	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
-	color: gray;
-
+	color: #505050;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
 	padding-left: 60px;
 	padding-right: 60px;
+	padding-bottom: 20px;
 }
 
 .destination h1{
 	font-family: 'Lato', sans-serif;
 }
 .destination-show{
+	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
-	color: gray;
+	color: #505050;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
 	padding-left: 60px;
 	padding-right: 60px;
+	padding-bottom: 20px;
 }
 
 .destination-edit{
 	margin-right: 150px;
 	margin-left: 150px;
-	color: gray;
+	color: #505050;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
@@ -49,7 +51,7 @@ body{
 .destination-new{
 	margin-right: 150px;
 	margin-left: 150px;
-	color: gray;
+	color: #505050;
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
@@ -64,10 +66,10 @@ h1{
 }
 
 dialog{
-	width: 50%;
+	width: 150%;
 	border-radius: 5px;
-	border-color: gray;
-	color: gray;
+	border-color: #505050;
+	color: #505050;
 }
 
 .content{
@@ -75,8 +77,8 @@ dialog{
 }
 
 .pictures{
-	height: 197px;
-	width: 294px;
+	width: 232px;
+	height: 146px;
 	border-radius: 3px;
 	
 	text-align:center;
@@ -118,4 +120,21 @@ dialog{
 
 p{
 	text-align: justify;
+}
+
+ul{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+.destination-poi {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.destination-edit-back{
+	text-align: center;
 }
