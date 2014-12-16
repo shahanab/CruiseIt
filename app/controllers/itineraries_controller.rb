@@ -45,6 +45,7 @@ class ItinerariesController < ApplicationController
   def update
     respond_to do |format|
       if @itinerary.update(itinerary_params)
+        @itinerary.itinerary_destinations.create(itinerary_destination_params[:itinerary_destination])
         format.html { redirect_to @itinerary, notice: 'Itinerary was successfully updated.' }
         format.json { render :show, status: :ok, location: @itinerary }
       else

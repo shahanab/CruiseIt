@@ -3,9 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body > div.itineraries{margin-top: 70px;}
+
 
 .itineraries{
+	margin-top: 70px;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: #505050;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
+	font-family: 'Maven Pro', sans-serif;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.itineraries-show{
+	margin-top: 70px;
+	margin-right: 150px;
+	margin-left: 150px;
+	color: #505050;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 5px;
+	font-family: 'Maven Pro', sans-serif;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.itineraries-edit{
+	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
 	color: #505050;
@@ -17,28 +46,8 @@ body > div.itineraries{margin-top: 70px;}
 	padding-bottom: 20px;
 }
 
-.itineraries-show{
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding: 80px;
-}
-
-.itineraries-edit{
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding-left: 60px;
-	padding-right: 60px;
-}
-
 .itineraries-new{
+	margin-top: 70px;
 	margin-right: 150px;
 	margin-left: 150px;
 	color: #505050;
@@ -46,7 +55,9 @@ body > div.itineraries{margin-top: 70px;}
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 5px;
 	font-family: 'Maven Pro', sans-serif;
-	padding: 60px
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 20px;
 }
 
 h1{
@@ -58,12 +69,6 @@ h1{
 	color:black;
 }
 
-
-body > div.itineraries-show {
-	margin-top: 70px;
-}
-
-
 #itinerary_itinerary_destination_destination_id{
 	margin-top: 20px;
 	margin-bottom: 15px
@@ -74,5 +79,11 @@ body > div.itineraries-show {
 	margin-bottom:15px;
 }
 
+.itinerary-info{
+	padding-left: 250px;
+}
 
-
+ul{
+	margin-left: 0px;
+	padding-left: 0px;
+}

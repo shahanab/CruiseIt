@@ -17,8 +17,6 @@ before_action :check_admin, except: [:show, :index]
           @category = @destination.pois.map{ |poi| poi.categories.include?(Category.find(params[:category].to_i))? poi : nil }.compact 
     end
           # @category = Category.find(params[:category].to_i) 
-
-#Chris's code:
    
   end
 
