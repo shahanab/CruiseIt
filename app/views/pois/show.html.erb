@@ -10,88 +10,81 @@
     <!-- <link rel="stylesheet" href="http://webapiv2.navionics.com/dist/webapi/webapi.min.css" > -->
 
 <div class="poi-show">
-<div class="row">
-  <div class="col-md-4">1</div>
-  <div class="col-md-4">2</div>
-  <div class="col-md-4">3</div>
-</div>
-  
+<p>
+  <div class="poi-name"><%= @poi.description %></div>
+</p>
 
-  <div class= "poi-content">
+<div class= "poi-content">
 
-    <div class= "poi-info">
-        <div class="text-right">
-            <%= form_for(@itinerary_item = ItineraryItem.new, remote: true) do |f| %>
-                <% if @itinerary_item.errors.any? %>
-                  <div id="error_explanation">
-                    <h2><%= pluralize(@itinerary_item.errors.count, "error") %> prohibited this poi from being saved:</h2>
-                    <ul>
-                    <% @itinerary_item.errors.full_messages.each do |message| %>
-                      <li><%= message %></li>
-                    <% end %>
-                    </ul>
-                  </div> 
+<div class= "something">
+  <div class="text-right">
+      <%= form_for(@itinerary_item = ItineraryItem.new, remote: true) do |f| %>
+        <% if @itinerary_item.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@itinerary_item.errors.count, "error") %> prohibited this poi from being saved:</h2>
+            <ul>
+            <% @itinerary_item.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div> 
+  </div>
+        <% end %>
+
+  <div class="poi-buttons">
+        <div class="field">
+          <%= f.hidden_field :poi_id, :value => @poi.id %>
         </div>
-            <% end %>
-
-      <div class="poi-buttons">
-          <div class="field"> <strong>Select Itinerary:</strong>
-            <%= f.hidden_field :poi_id, :value => @poi.id %>
-          </div>
-            <%= f.collection_select :itinerary_id,  current_user.itineraries, :id, :name %>
-          <div class="actions">
-            <%= f.submit %>
-          </div>
-          <% if current_user.admin? %>
-             <%= render 'categories', poi: @poi %>
-             <%= link_to 'Edit', edit_poi_path(@poi), class: "btn btn-default" %> |
+          <%= f.collection_select :itinerary_id,  current_user.itineraries, :id, :name %>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+        <% if current_user.admin? %>
+           <%= render 'categories', poi: @poi %>
+           <%= link_to 'Edit', edit_poi_path(@poi), class: "btn btn-default" %> |
+        <% end %>
+            <%= link_to 'Back', pois_path, class: "btn btn-default"  %>
+  </div>
           <% end %>
-              <%= link_to 'Back', pois_path, class: "btn btn-default"  %>
-      </div>
-            <% end %>
-  </div>
-
-  <div class = "destination-info">
-      <strong>Destination:</strong>
-      <br>
-      <%= @poi.destination.name %>
-  </div>
-  <div class = "category-info">
-      <strong>Categories:</strong>
-      <br>
-          <% @poi.categories.each do |category| %>
-          	<%= category.name %>
-              	<% if current_user.admin? %>
-                    	<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
-              	<% end %>
-          	   <br>
-          <% end %> 
-    </div> 
 </div>
 
-<br>
+<div class = "actual-info">
+    <strong>Destination:</strong>
+    <br>
+    <%= @poi.destination.name %>
+    <br>
+    <br>
+    <strong>Categories:</strong>
+    <br>
+        <% @poi.categories.each do |category| %>
+          <%= category.name %>
+              <% if current_user.admin? %>
+                    <%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+             <br>
+        <% end %> 
+  </div> 
+
+</div>
 
 <!--   Navionics -->
+
 <h3> Navionics Map</h3>
 <br>
 
-    <div class="navionics" data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
-        <div class="test_map_div" ></div>
-          <script>
-              $(document).on("ready page:load", function( ) {
-
-                  var webapi = new JNC.Views.BoatingNavionicsMap({
-                      tagId: '.test_map_div',
-                      center: [  -64.5431, 18.4456 ],
-                      zoom: 8,
-                      navKey: 'Navionics_webapi_00500'
-                  });
-
-                  webapi.showSonarControl(false);
-              })
-          </script>
+<div class="navionics" data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
+   <div class="test_map_div" ></div>
+    <script>
+        // $(document).on("ready page:load", function( ) {
+            var webapi = new JNC.Views.BoatingNavionicsMap({
+                tagId: '.test_map_div',
+                center: [  -64.5431, 18.4456 ],
+                zoom: 8,
+                navKey: 'Navionics_webapi_00500'
+            });
+            webapi.showSonarControl(false);
+        // })
+    </script>
     </div>
-    </div>
-<!--   </div> -->
-<!-- </div> -->
-
+  </div>
+</div>
