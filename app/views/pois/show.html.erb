@@ -78,7 +78,7 @@
     <div class="navionics" data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
         <div class="test_map_div" ></div>
           <script>
-              // $(document).on("ready page:load", function( ) {
+              $(document).on("ready page:load", function( ) {
 
                   var webapi = new JNC.Views.BoatingNavionicsMap({
                       tagId: '.test_map_div',
@@ -88,7 +88,7 @@
                   });
 
                   webapi.showSonarControl(false);
-              // })
+              })
           </script>
     </div>
     </div>

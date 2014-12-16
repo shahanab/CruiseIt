@@ -73,7 +73,7 @@
 
 <!-- Jost van Dyke -->
     <div class= "col-lg-3 ">
-      <div class="islands"><strong><%= link_to "Jost Van Dyke", destination_path(Destination.find_by(name: "Jost Van Dyke"))%></strong></div>
+      <div class="islands"><strong><%= link_to "Jost Van Dyke", Destination.find_by(name: "Jost Van Dyke")%></strong></div>
         <center>
         <%= image_tag "jostvandyke.png", class:"pictures img-responsive" %>
         <br>
