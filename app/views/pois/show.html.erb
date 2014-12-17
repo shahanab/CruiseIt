@@ -18,7 +18,7 @@
 
 <div class= "something">
   <div class="text-right">
-      <%= form_for(@itinerary_item = ItineraryItem.new) do |f| %>
+      <%= form_for(@itinerary_item = ItineraryItem.new3) do |f| %>
         <% if @itinerary_item.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@itinerary_item.errors.count, "error") %> prohibited this poi from being saved:</h2>
