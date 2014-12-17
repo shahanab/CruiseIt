@@ -1,48 +1,33 @@
-
 <div class= "itineraries">
+<h1>Itineraries</h1>
 
-
-  <div class="row"> 
-    <h1>Itineraries</h1>
-
-    <div class="row">
-      <div class="col-md-3">
-        <strong> Name
-      </div>
-      <div class="col-md-3">
-        Start Date
-      </div>
-      <div class="col-md-3">
-        End Date
-      </div>
-      <div class="col-md-3">
-        Action</strong>
-      </div>
-    </div>
-  </div>
-
-  <br>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start date</th>
+      <th>End date</th>
 <!--       <th>User</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-
-  <% @itineraries.each do |itinerary| %>
-  <div class="row">
-        <div class="col-md-3"><%= link_to itinerary.name, itinerary %></div>
-        <div class="col-md-3"><%= itinerary.start_date.strftime("%b %d, %Y") %></div>
-        <div class="col-md-3"><%= itinerary.end_date.strftime("%b %d, %Y") %></div>
-        <div class="col-md-3">
-          <%= link_to 'Edit', edit_itinerary_path(itinerary), class: "btn btn-default" %>
-          </div>
-  </div>
-  <% end %>
-
-
+  <tbody>
+    <% @itineraries.each do |itinerary| %>
+      <tr>
+        <td><%= link_to itinerary.name, itinerary %></td>
+        <td><%= itinerary.start_date %></td>
+        <td><%= itinerary.end_date %></td>
+        
+        <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
+        <td><%= link_to 'Delete', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 
-<div class="row">
-<div class="span7 text-center">
-  <%= link_to 'Create New Itinerary', new_itinerary_path, class: "btn btn-default"%></div>
-</div>
+<%= link_to 'New Itinerary', new_itinerary_path %>
 
 </div>

@@ -1,145 +1,26 @@
 <div class= "destinations">
-
-  <div class="row">
-    <div class="col-lg-12">
 <h1>Destinations</h1>
-<p>The British Virgin Islands are considered the best sailing and boating destination of the Caribbean.  While cruising the crystal clear waters, enjoy the white sandy beaches, great selection of laid-back bars, and restaurants. Travel windward through the British Virgin Islands and catch the trade winds as they carry you to nearby destinations.  The British Virgin Islands has more than 60 islands for anchorage and are contained within an 80 nautical kilometre radius.</p>
-  
-  </div>
 
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Island</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<div class= "row destinations-content">
-
-   
-<!-- Virgin Gorda -->
-    <div class= "col-lg-3 ">
-      <div class="islands"><strong><%= link_to "Virgin Gorda", Destination.find_by(name: "Virgin Gorda") %></strong></div>
-
-      <center>
-        <%= image_tag "virgingorda.png", class:"pictures img-responsive" %>
-
-        <br>
-      </center>
-
-        <dialog id="vgmodal">  
-        <h3>Virgin Gorda</h3>  
-        <p>Sail to Virgin Gorda to enjoy the quiet coves, safe anchorages, and yacht clubs.  While in Virgin Gorda, see the Baths known for it’s unique natural land formation in the BVI. The Baths consist of thousands of smooth boulders, strewn along the beach on southern end Virgin Gorda. Enjoy a drink at the Top of the Baths, with one of their unique cocktails. Nearby is Virgin Gorda Yacht Harbour, with a full service marina, shops and restaurants. Bitter End Yacht Club, Saba Rock and Leverick Bay all offer good restaurants and transient dockage.</p>  
-        <button id="vgexit" class="btn btn-default">Exit</button>  
-        </dialog>  
-        <button id="vgshow" class="btn btn-default">Show More</button>
-
-        <script type="text/javascript">
-          (function() {  
-              var dialog = document.getElementById('vgmodal');  
-              document.getElementById('vgshow').onclick = function() {  
-                  dialog.show();  
-              };  
-              document.getElementById('vgexit').onclick = function() {  
-                  dialog.close();  
-              };  
-          })();
-          </script>
-      </div>
-
-
-<!-- Tortola -->
-    <div class= "col-lg-3">
-      <div class="islands"><strong><%= link_to "Tortola", Destination.find_by(name: "Tortola")%></strong></div>
-      <center>
-        <%= image_tag "tortola.png", class:"pictures img-responsive" %>
-        <br>
-      </center>
-        <dialog id="tmodal">  
-        <h3>Tortola</h3>  
-        <p>Tortola is the largest and most populated of the British Virgin Islands.  Tortola has several popular anchorages including Cane Garden Bay, Soper’s Hole, Road Harbour and Marina Cay at Trellis Bay.  The capital of Tortola, Road Town is the starting point for many yacht charters.</p>
-        <button id="texit" class="btn btn-default">Exit</button>  
-        </dialog>  
-        <button id="tshow" class="btn btn-default">Show More</button>
-     
-        <script type="text/javascript">
-          (function() {  
-              var dialog = document.getElementById('tmodal');  
-              document.getElementById('tshow').onclick = function() {  
-                  dialog.show();  
-              };  
-              document.getElementById('texit').onclick = function() {  
-                  dialog.close();  
-              };  
-          })();
-        </script>
-      </div>
-
-
-<!-- Jost van Dyke -->
-    <div class= "col-lg-3 ">
-      <div class="islands"><strong><%= link_to "Jost Van Dyke", Destination.find_by(name: "Jost Van Dyke")%></strong></div>
-        <center>
-        <%= image_tag "jostvandyke.png", class:"pictures img-responsive" %>
-        <br>
-        </center>
-        <dialog id="jvdmodal">  
-        <h3>Jost Van Dyke</h3>  
-        <p>Jost Van Dyke is only accessible by boat, which is an easy and beautiful sail from Tortola.  This island is known for the sandy white beach and the infamous Soggy Dollar Bar named for the soaked dollars handed over by sailors who swam ashore for their well-known libation the Painkiller. </p>
-        <button id="jvdexit" class="btn btn-default">Exit</button>  
-        </dialog>  
-        <button id="jvdshow" class="btn btn-default">Show More</button>
-     
-        <script type="text/javascript">
-          (function() {  
-              var dialog = document.getElementById('jvdmodal');  
-              document.getElementById('jvdshow').onclick = function() {  
-                  dialog.show();  
-              };  
-              document.getElementById('jvdexit').onclick = function() {  
-                  dialog.close();  
-              };  
-          })();
-        </script>
-      </div>
-
-
-<!-- Anegada -->
-    <div class= "col-lg-3">
-      <div class="islands"><strong><%= link_to "Anegada", Destination.find_by(name: "Anegada")%></strong></div>
-        <center>
-        <%= image_tag "anegada.png", class:"pictures img-responsive" %>
-        <br>
-        </center>
-        <dialog id="amodal">  
-        <h3>Anegada</h3>  
-        <p>Anegada or the "drowned island' is located remotely north.  A sail to this island wouldn’t be complete without enjoying the locally caught lobster.  Cow Wreck Beach Bar and Restaurant, Anegada Reef Hotel Neptune’s Treasure offer fresh caught lobster culinary delights.</p>
-        <button id="aexit" class="btn btn-default">Exit</button>  
-        </dialog>  
-        <button id="ashow" class="btn btn-default">Show More</button>
-     
-        <script type="text/javascript">
-          (function() {  
-              var dialog = document.getElementById('amodal');  
-              document.getElementById('ashow').onclick = function() {  
-                  dialog.show();  
-              };  
-              document.getElementById('aexit').onclick = function() {  
-                  dialog.close();  
-              };  
-          })();
-        </script>
-      </div>
-</div>
-
-
-
-<!--  <br>
- <% @destinations.each do |destination| %>
-        <% link_to destination.name, destination %>
-        <% link_to 'Edit', edit_destination_path(destination) %>
-        <% link_to 'Delete', destination, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <br>    
-  <% end %>
+  <tbody>
+    <% @destinations.each do |destination| %>
+      <tr>
+        <td><%= link_to destination.name, destination %></td>
+        <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
+        <td><%= link_to 'Delete', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
-<% link_to 'New Destination', new_destination_path %>
-</div> -->
-
-
+<%= link_to 'New Destination', new_destination_path %>
+</div>
 

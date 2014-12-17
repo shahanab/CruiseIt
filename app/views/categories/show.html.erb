@@ -7,8 +7,7 @@
 
 <ul>
 	<% @category.pois.each do |poi|  %>
-		<li><%= link_to poi.description, poi %></li>
-		
+		<li><%= poi.description %></li>
 	<% end %>
 </ul>
 

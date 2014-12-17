@@ -2,56 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-	background: #99CCFF;
-}
-
 .poi{
-	margin-top: 70px;
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding-left: 60px;
-	padding-right: 60px;
-	padding-bottom: 20px;
+	color: white;
 }
-
- .navionics {
-      margin-bottom: 0;
-      width: 100%;
-      height: 75%;
-      border: solid;
-      border-radius: 3px;
-      border-color: rgba(255, 255, 255, 0.6);
-        }        
 
 .poi-edit{
-	margin-top: 70px;
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding-left: 60px;
-	padding-right: 60px;
-	padding-bottom: 20px;
+	color:white;
 }
 
 .poi-show{
-	margin-top: 70px;
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding-left: 60px;
-	padding-right: 60px;
-	padding-bottom: 20px;
+	color: white;
 }
 
 .poi-new{
@@ -79,38 +39,19 @@ body{
 h3{
 	margin-top: 100px;
 	font-family: 'Maven Pro', sans-serif;
+
+	color: white;
+}
+
+h1{
+
 	text-align: center;
-	text-transform: uppercase;
-	color: #505050;
 }
 
-.poi-content{
-	// padding-left: 150px;
+.poi-name{
+	color: black;
 }
 
-.poi-info{
-	margin-left: 250px;
+.remove-category{
+	color:black;
 }
-
-.poi-buttons{
-	float: right;
-	text-align: left;
-	margin-right: 100px;
-}
-
-// .category-info{
-// 	float: right;
-// }
-
-// .destination-info{
-// 	float: right;
-// }
-
-.actual-info{
-
-	padding-left: 150px;
-}
-
-
-
-
