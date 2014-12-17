@@ -7,84 +7,61 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css" >
     <link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" >
     <script type="text/javascript" src="http://webapiv2.navionics.com/dist/webapi/webapi.min.js"></script>
-    <!-- <link rel="stylesheet" href="http://webapiv2.navionics.com/dist/webapi/webapi.min.css" > -->
+    <link rel="stylesheet" href="http://webapiv2.navionics.com/dist/webapi/webapi.min.css" >
 
 <div class="poi-show">
 <p>
-  <div class="poi-name"><%= @poi.description %></div>
+  <strong>Description:</strong>
+  <%= @poi.description %>
 </p>
+<strong>Destination:</strong>
+<%= @poi.destination.name %>
+<br>
+<strong>Categories:</strong>
+<br>
+    <% @poi.categories.each do |category| %>
+    	<%= category.name %>
+    	<% if current_user.admin? %>
+    	<%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
+    	<% end %>
+    	<br>
+    <% end %>
 
-<div class= "poi-content">
+    <% if current_user.admin? %>
+    	<%= render 'categories', poi: @poi %>
+    	<%= link_to 'Edit', edit_poi_path(@poi) %> |
+    <% end %>
+    <%= link_to 'Back', pois_path %>
+   
 
-<div class= "something">
-  <div class="text-right">
-      <%= form_for(@itinerary_item = ItineraryItem.new) do |f| %>
-        <% if @itinerary_item.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@itinerary_item.errors.count, "error") %> prohibited this poi from being saved:</h2>
-            <ul>
-            <% @itinerary_item.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-            </ul>
-          </div> 
-  </div>
-        <% end %>
 
-  <div class="poi-buttons">
-        <div class="field">
-          <%= f.hidden_field :poi_id, :value => @poi.id %>
-        </div>
-          <%= f.collection_select :itinerary_id,  current_user.itineraries, :id, :name %>
-        <div class="actions">
-          <%= f.submit %>
-        </div>
-        <% if current_user.admin? %>
-           <%= render 'categories', poi: @poi %>
-           <%= link_to 'Edit', edit_poi_path(@poi), class: "btn btn-default" %> |
-        <% end %>
-            <%= link_to 'Back', :back, class: "btn btn-default"  %>
-  </div>
-          <% end %>
-</div>
-
-<div class = "actual-info">
-    <strong>Destination:</strong>
-    <br>
-    <%= @poi.destination.name %>
-    <br>
-    <br>
-    <strong>Categories:</strong>
-    <br>
-        <% @poi.categories.each do |category| %>
-          <%= category.name %>
-              <% if current_user.admin? %>
-                    <%= link_to 'Remove Category', category.of_this(@poi) , method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-             <br>
-        <% end %> 
-  </div> 
-
-</div>
 
 <!--   Navionics -->
 
-<h3> Navionics Map</h3>
+<h1> Navionics Map</h1>
 <br>
+    <style type="text/css">
+        html, body, .test_map_div {
+            margin-bottom: 0;
+            width: 100%;
+            height: 75%;
+        }
+    </style>
 
-<div class="navionics" data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
+<body data-root ="http://webapiv2.navionics.com/dist/webapi/images" >
    <div class="test_map_div" ></div>
     <script>
-        // $(document).on("ready page:load", function( ) {
-            var webapi = new JNC.Views.BoatingNavionicsMap({
-                tagId: '.test_map_div',
-                center: [  -64.5431, 18.4456 ],
-                zoom: 8,
-                navKey: 'Navionics_webapi_00500'
-            });
-            webapi.showSonarControl(false);
-        // })
+    
+        var webapi = new JNC.Views.BoatingNavionicsMap({
+            tagId: '.test_map_div',
+            center: [  -64.5431, 18.4456 ],
+            zoom: 12,
+            navKey: 'Navionics_webapi_00500'
+        });
+
+        webapi.showSonarControl(false);
+
     </script>
-    </div>
-  </div>
+</body>
 </div>
+

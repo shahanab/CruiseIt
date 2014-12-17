@@ -14,43 +14,16 @@
  *= require_self
  */
 
-body{
-	background: #4DB8DB;
-	background-image: url(https://s3.amazonaws.com/uploads.hipchat.com/108061/1279243/WS2L8NaUPEJuElb/cartographer.png);
-}
-
-.navbar{
-	margin:0;
-}
-
 a:visited { 
-	color: #505050;
-	/*background-color: #0099CC;*/
+	/*color: #585858;*/
+	color: white;
+	background-color: #0099CC;
 }
 
-a {
-	color: #505050;
-	font-family: 'Maven Pro', sans-serif;
+a{
+	color:white;
 }
 
 a:hover{
-	color: #008AB8;
-	/*background-color: #5EBFDF;*/
-	background-color: none;
-	border-radius: 2px;
-	text-decoration: none;
+	background-color: #0099CC;
 }
-
-input{
-	color:black;
-}
-
-ul{
-	list-style-type: none;
-}
-
-a.navbar-link:hover{
-	background-color: none !important;
-}
-
-

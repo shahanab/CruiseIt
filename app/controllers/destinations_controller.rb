@@ -12,12 +12,10 @@ before_action :check_admin, except: [:show, :index]
   # GET /destinations/1.json
   def show
     if params[:category].nil? || params[:category].to_i == 0
-          @category = @destination.pois
+          @category = @destination
     else
-          @category = @destination.pois.map{ |poi| poi.categories.include?(Category.find(params[:category].to_i))? poi : nil }.compact 
+          @category = Category.find(params[:category].to_i) 
     end
-          # @category = Category.find(params[:category].to_i) 
-   
   end
 
   # GET /destinations/new

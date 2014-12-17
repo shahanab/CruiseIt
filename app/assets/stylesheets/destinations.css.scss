@@ -2,159 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-	background: #99CCFF;
-	background: url(https://s3.amazonaws.com/uploads.hipchat.com/108061/1279243/WS2L8NaUPEJuElb/cartographer.png);
-
-}
-
 .destinations{
-	margin-top: 70px;
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding-left: 60px;
-	padding-right: 60px;
-	padding-bottom: 20px;
+	color: white;
 }
 
-.destination h1{
-	font-family: 'Lato', sans-serif;
-}
 .destination-show{
-	margin-top: 70px;
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding-left: 60px;
-	padding-right: 60px;
-	padding-bottom: 20px;
+	color: white;
 }
 
 .destination-edit{
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding-left: 60px;
-	padding-right: 60px;
+	color:white;
 }
 
 .destination-new{
-	margin-right: 150px;
-	margin-left: 150px;
-	color: #505050;
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 5px;
-	font-family: 'Maven Pro', sans-serif;
-	padding-left: 60px;
-	padding-right: 60px;
+	color:white;
 }
 
 h1{
 	text-align: center;
-	text-transform: uppercase;
-	text-weight:bold;
 }
 
-dialog{
-	width: 150%;
-	border-radius: 5px;
-	border-color: #505050;
-	color: #505050;
-}
-
-.content{
-	display: inline-block;
-}
-
-.pictures{
-	width: 232px;
-	height: 146px;
-	border-radius: 3px;
-	
-	text-align:center;
-}
-
-.btn-default{
-	margin-top: 5px;
-	margin-left: auto;
-}
-
-.virgingorda{
-	text-align: center;
-	margin-bottom: 40px;
-}
-
-.tortola{
-	text-align:center;
-	margin-bottom: 40px;
-	margin-left: 100px;
-}
-
-.jost-van-dyke{
-	text-align:center;
-}
-
-.anegada{
-	text-align: center;
-	margin-left: 100px;
-}
-
-.destinations-content{
-	text-align: center;
-}
-
-.islands{
-	font-size: 20px;
-	text-align:center;
-}
-
-p{
-	text-align: justify;
-}
-
-.the-categories{
-	margin-left: 130px;
-	margin-right: 130px;
-}
-
-.destination-poi {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-    margin-left: 150px;
-    margin-right: 150px;
-}
-
-.destination-edit-back{
-	text-align: center;
-}
-
-body > div.destination-show > div.destination-edit-back > a:nth-child(1){
-	margin-right: 10px;
-}
-
-#vgmodal{
-	z-index:1;
-}
-
-#tmodal{
-	z-index:1;
-}
-
-#jvdmodal{
-	z-index:1;
-}
-
-#amodal{
-	z-index:1;
-}

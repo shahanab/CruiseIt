@@ -1,54 +1,38 @@
 <div class= "itineraries-show">
 <!-- <p id="notice"><%= notice %></p> -->
 
-<h1><%= @itinerary.name %></h1>
-<div class= "itinerary-info">
-      <div class="row">
-            <p> 
-              <strong>Destination:</strong>
-                <% @itinerary.destinations.each do |destination|%>
-                    <%= destination.name %>
-                    <% end %>  
-            </p>
-      </div>
+<p>
+  <strong>Name:</strong>
+  <%= @itinerary.name %>
+</p>
 
-      <div class="row">
-            <p>
-              <strong>Start Date:</strong>
-                <%= @itinerary.start_date.strftime("%b %d, %Y") %>
-            </p>
-      </div>
+<p>
+  <strong>Start date:</strong>
+  <%= @itinerary.start_date %>
+</p>
 
-      <div class="row">
-            <p>
-              <strong>End Date:</strong>
-                <%= @itinerary.end_date.strftime("%b %d, %Y") %>
-            </p>
-      </div>
+<p>
+  <strong>End date:</strong>
+  <%= @itinerary.end_date %>
+</p>
 
-      <div class="row"> 
-          <%= link_to 'Edit', edit_itinerary_path(@itinerary), class: "btn btn-default" %> 
-          <%= link_to 'Back', itineraries_path, class: "btn btn-default" %>
-      </div>
+<p>
+  <strong>User:</strong>
+  <%= @itinerary.user.email %>
+</p>
 
-      <!-- <div class="col-lg-12">
-      <p>
-        <strong>User:</strong>
-        <%= @itinerary.user.email %>
-      </p>
-      </div> -->
-
-
-  <br>
-    <div class="row">
-    	<strong>Your Points of Interest:</strong>
-    	<div class = "actual-pois"><ul>
-    		<% @itinerary.pois.each do |poi| %>
-    			<li><%= link_to poi.description, poi %></li>
-                <!--       <li><% link_to 'Edit', edit_poi_path(poi) %></il>
-                      <li><% link_to 'Delete', poi, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
-    		<% end %>
-    	</ul></div>
-    </div>
-   </div> 
+<strong>Destinations:</strong>
+<% @itinerary.destinations.each do |destination|%>
+    <%= destination.name %>
+    <% end %>
+<br>
+	User POIs:
+	<ul>
+		<% @itinerary.pois.each do |poi| %>
+			<li><%= poi.description %></li>
+		<% end %>
+	</ul>
+	
+<%= link_to 'Edit', edit_itinerary_path(@itinerary) %> |
+<%= link_to 'Back', itineraries_path %>
 </div>

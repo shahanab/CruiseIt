@@ -9,24 +9,19 @@
 
 <%# select_tag :category, options_for_select(Category.all.collect{|c| [c.name, c.id] }) %>
 <%# submit_tag("Go") %>
-<ul><div class="the-categories">
-	<% Category.all.each do |category| %>
-		<button id="category" class="btn btn-default"><%= link_to category.name, destination_path(@destination, category: category.id )%></button>
-		<% end %>
-		<button id="all" class="btn btn-default"><%= link_to 'All', destination_path(@destination) %></button></div>
-</ul>
+<%= link_to 'All', destination_path(@destination) %>
+<% Category.all.each do |category| %>
+	<%= link_to category.name, destination_path(@destination, category: category.id )%>
+<% end %>
+
 
 <br>
 
-<div class = "destination-poi">
-<% @category.each do |poi| %>
-	<%= link_to poi.description , poi_path(poi) %>
+<% @category.pois.each do |poi| %>
+	<%= link_to poi.description , poi_path(poi) %><%= poi.categories.first.name rescue nil %>
 <br>
-<% end %></div>
+<% end %>
 
-<br>
-
-<div class = "destination-edit-back" >
-<%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-default" %>
-<%= link_to 'Back', destinations_path, class: "btn btn-default" %></div>
+<%= link_to 'Edit', edit_destination_path(@destination) %> |
+<%= link_to 'Back', destinations_path %>
 </div>
