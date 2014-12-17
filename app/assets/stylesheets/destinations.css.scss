@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 body{
-	background: #99CCFF;
-	background: url(https://s3.amazonaws.com/uploads.hipchat.com/108061/1279243/WS2L8NaUPEJuElb/cartographer.png);
+	background: #83AEFC;
+	background: url(https://s3.amazonaws.com/uploads.hipchat.com/108061/1310811/cOvaaF8T8sxHTnP/cartographer.png);
 
 }
 
@@ -22,7 +24,7 @@ body{
 }
 
 .destination h1{
-	font-family: 'Lato', sans-serif;
+	font-family: 'Maven', sans-serif;
 }
 .destination-show{
 	margin-top: 70px;
@@ -63,6 +65,8 @@ h1{
 	text-align: center;
 	text-transform: uppercase;
 	text-weight:bold;
+	font-family: 'Maven Pro', sans-serif;
+
 }
 
 dialog{

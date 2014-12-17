@@ -15,7 +15,7 @@
  */
 
 body{
-	background: #4DB8DB;
+	background: #29F1FF;
 	background-image: url(https://s3.amazonaws.com/uploads.hipchat.com/108061/1279243/WS2L8NaUPEJuElb/cartographer.png);
 }
 
@@ -52,5 +52,7 @@ ul{
 a.navbar-link:hover{
 	background-color: none !important;
 }
+
+h1{font-family: 'Maven Pro', sans-serif;}
 
 
